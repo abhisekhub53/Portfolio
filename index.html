@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Frontend Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Keyframe Animations for Skills */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+            color: #6c63ff;
+            animation: slideIn 1s ease forwards;
+            opacity: 0; /* Initial state for animation */
+            transform: translateY(50px);
+        }
+
+        .skill-item i {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #6c63ff;
+            animation: bounce 2s infinite;
+        }
+
+        .skill-item:nth-child(1) { animation-delay: 0.2s; }
+        .skill-item:nth-child(2) { animation-delay: 0.4s; }
+        .skill-item:nth-child(3) { animation-delay: 0.6s; }
+        .skill-item:nth-child(4) { animation-delay: 0.8s; }
+        .skill-item:nth-child(5) { animation-delay: 1s; }
+
+        /* Social Media Hover Effects */
+        .social-links a {
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 10px;
+            color: #6c63ff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #333;
+            transform: scale(1.2);
+        }
+
+        .social-links a i {
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover i {
+            transform: rotate(360deg);
+        }
+
+        /* Modal Popup Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .modal-content h3 {
+            margin: 15px 0;
+        }
+
+        .modal-content p {
+            font-size: 16px;
+        }
+
+        .close-modal {
+            background: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="logo">Abhisek's Portfolio<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Abhisek<span>👋</span></h1>
+            <h2> A Passionate Front-End Web Developer</h2>
+            <p>Welcome to my portfolio! I’m a front-end web developer with a passion for creating responsive, visually appealing, and user-centric websites. Currently, I’m pursuing a Master’s in Computer Applications (MCA) at Odisha University of Agriculture and Technology (OUAT), which has provided me with a solid foundation in both the theoretical and practical aspects of computer science and web development.</p>
+             <p>I specialize in HTML, CSS, JavaScript, and React, and I’m constantly honing my skills to deliver exceptional user experiences.</p>
+            <p>Explore my work below, and feel free to reach out if you'd like to collaborate or learn more about what I do!
+             </p>
+    
+                <div class="cta-buttons">
+                <a href="#contact" class="btn primary">Contact Me</a>
+                <a href="#projects" class="btn secondary">View Projects</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="p4.jpg" alt="Profile Picture" class="profile-pic">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <i class="fab fa-html5"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-js"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-react"></i>
+                <p>React</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-github"></i>
+                <p>GitHub</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-AngularJS"></i>
+                <p>AngularJS</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project-item" onclick="openModal(1)">
+                <img src="technology-1283624_1280.jpg" alt="Project 1">
+                <h3>Portfolio Website</h3>
+                <p>A responsive and modern portfolio website showcasing my skills.This website often includes details about my technical abilities, personal projects, and contact methods, typically built using web development technologies such as HTML, CSS, JavaScript, and sometimes frameworks like React. It is also designed to be user-friendly, responsive, and visually appealing. a collection of work that showcases a web developer's skills, abilities.</p>
+            </div>
+            <div class="project-item" onclick="openModal(2)">
+                <a href="https://abhisekhub53.github.io/resume/" target="_blank">
+                <img src="igor-miske-Px3iBXV-4TU-unsplash.jpg" alt="Project 2">
+                <h3>Online Store</h3></a>
+                <p>An E-commerce App is a mobile application that allows users to browse, purchase, and manage products or services online. It typically includes features like product listings, a shopping cart, secure payment options, order tracking, and user accounts. E-commerce apps provide a convenient way for customers to shop from their mobile devices, offering a seamless and personalized shopping experience.</p>
+            </div>
+            <div class="project-item" onclick="openModal(3)">
+                <a href="https://abhisekhub53.github.io/resume2/" target="_blank">
+                <img src="tablet-7025900_1280.jpg" alt="Project 3">
+                <h3>Movie App</h3></a>
+                <p>This is a mobile or web application designed to provide users with information about movies, including details such as movie titles, release dates, plot summaries, cast, trailers, and ratings. It may allow users to search for movies, view showtimes, watch trailers, and even purchase tickets or stream films directly. Users can search for movies by title, genre, actor, or director. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Popup -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Project Detail">
+            <h3 id="modalTitle">Project Title</h3>
+            <p id="modalDescription">Project Description</p>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit" class="btn primary">Send Message</button>
+        </form>
+     <!-- Social Media Links -->
+    <div>
+        <a href="https://www.facebook.com" target="Abhisek Dash">
+            <img src="facebook.png" alt="Facebook" style="width: 40px; height: 40px;">
+        </a>
+        <a href="https://www.whatsapp.com" target="Abhisek Dash">
+            <img src="wp.jpeg" alt="Twitter" style="width: 40px; height: 40px;">
+        </a>
+        <a href="https://www.instagram.com" target="_abhisekdash">
+            <img src="instagram.avif" alt="Instagram" style="width: 40px; height: 40px;">
+        </a>
+       <a href="https:www.github.com" target="abhisekhub53">
+        <img src="github.png" alt="Github" style="width: 40px; height: 40px;">
+       </a>
+       <a href="mailto:abhisekdash53@gmail.com" target="Abhisek Dash">
+        <img src="gmail.jpg" alt="Gmail" style="width: 40px; height: 40px;">
+    </a>
+     </div> 
+          
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Luca. All rights reserved.</p>
+    <script src="scripts.js"></script>
+</footer>
+
+        
